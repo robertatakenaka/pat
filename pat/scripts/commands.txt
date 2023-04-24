@@ -1,0 +1,23 @@
+# python manage.py runscript pat_load_movement --script-args ./planilhas/pat/movimentacao-2020-01-01-a-2020-12-31.xlsx
+# python manage.py runscript pat_load_movement --script-args ./planilhas/pat/movimentacao-2021-01-01-a-2021-12-31.xlsx
+# python manage.py runscript pat_load_movement --script-args ./planilhas/pat/movimentacao-2022-01-01-a-2022-12-31.xlsx
+# python manage.py runscript pat_load_movement --script-args ./planilhas/pat/movimentacao-2023-01-01-a-2023-03-17.xlsx
+
+# python manage.py runscript pat_load_negotiation --script-args ./planilhas/pat/negociacao-2020-01-01-a-2020-12-31.xlsx
+# python manage.py runscript pat_load_negotiation --script-args ./planilhas/pat/negociacao-2021-01-01-a-2021-12-31.xlsx
+# python manage.py runscript pat_load_negotiation --script-args ./planilhas/pat/negociacao-2022-01-01-a-2022-12-31.xlsx
+# python manage.py runscript pat_load_negotiation --script-args ./planilhas/pat/negociacao-2023-01-01-a-2023-03-17.xlsx
+
+python manage.py runscript pat_delete
+
+python manage.py runscript pat_load_divisions --script-args ./planilhas/pat/pat-500-inde.csv
+
+python manage.py runscript pat_load_b3_position --script-args ./planilhas/pat/posicao-2023-03-17.xlsx 2023-03-17
+python manage.py runscript pat_load_fundos_position --script-args ./planilhas/pat/fundos-2023-03-17.csv 2023-03-17
+python manage.py runscript pat_load_portfolio_position --script-args 2023-03-17
+python manage.py runscript pat_display_portfolio_position
+
+python manage.py runscript pat_load_b3_position --script-args ./planilhas/pat/posicao-2023-04-19.xlsx 2023-04-19
+python manage.py runscript pat_load_fundos_position --script-args ./planilhas/pat/fundos-2023-04-19.csv 2023-04-19
+python manage.py runscript pat_load_portfolio_position --script-args 2023-04-19
+python manage.py runscript pat_display_portfolio_position

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Portfolios Position</h2>
+    <ul>
+        {% for pp in pp_items %}
+            <li>
+                <a href="{% url 'pat:details' pp %}">{{ pp }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

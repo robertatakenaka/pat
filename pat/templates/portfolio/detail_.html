@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ pp }}</h2>
+<div id="g1">
+
+</div>
+<div id="g2">
+
+</div>
+<script type="text/javascript">
+import * as echarts from 'echarts';
+
+var chartDom = document.getElementById('g1');
+var myChart = echarts.init(chartDom);
+var option;
+
+const labelRight = {
+  position: 'right'
+};
+option = {
+  title: {
+    text: 'Bar Chart with Negative Value'
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  grid: {
+    top: 80,
+    bottom: 30
+  },
+  xAxis: {
+    type: 'value',
+    position: 'top',
+    splitLine: {
+      lineStyle: {
+        type: 'dashed'
+      }
+    }
+  },
+  yAxis: {
+    type: 'category',
+    axisLine: { show: false },
+    axisLabel: { show: false },
+    axisTick: { show: false },
+    splitLine: { show: false },
+    data: {{ slices_labels }}
+  },
+  series: [
+    {
+      name: 'Diferença absoluta',
+      type: 'bar',
+      stack: 'Total',
+      label: {
+        show: true,
+        formatter: '{b}'
+      },
+      data: {{ slices_absolute }}
+    }
+  ]
+};
+
+option && myChart.setOption(option);
+</script>
+
+<script type="text/javascript">
+import * as echarts from 'echarts';
+
+var chartDom_g2 = document.getElementById('g2');
+var myChart_g2 = echarts.init(chartDom_g2);
+var option_g2;
+
+const labelRight = {
+  position: 'right'
+};
+option_g2 = {
+  title: {
+    text: 'Bar Chart with Negative Value'
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  grid: {
+    top: 80,
+    bottom: 30
+  },
+  xAxis: {
+    type: 'value',
+    position: 'top',
+    splitLine: {
+      lineStyle: {
+        type: 'dashed'
+      }
+    }
+  },
+  yAxis: {
+    type: 'category',
+    axisLine: { show: false },
+    axisLabel: { show: false },
+    axisTick: { show: false },
+    splitLine: { show: false },
+    data: {{ slices_labels }}
+  },
+  series: [
+    {
+      name: 'Diferença relativa',
+      type: 'bar',
+      stack: 'Total',
+      label: {
+        show: true,
+        formatter: '{b}'
+      },
+      data: {{ slices_relative }}
+    }
+  ]
+};
+
+option_g2 && myChart_g2.setOption(option_g2);
+</script>
+{% endblock %}
